@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+
+{% block body %}
+    {% if info.status is defined %}
+	<div>
+        {% set classmsg = info.status == "error" ? "alert alert-danger" : "alert alert-success"  %}
+		<div class="{{classmsg}}">{{info.msg}}</div>
+	</div>
+    {% endif %}
+	<div>
+		{{ form(form) }}
+    </div>
+{% endblock %}
